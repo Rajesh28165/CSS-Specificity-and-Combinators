@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+}
+th {
+    background-color: #d3d3d3;
+    font-weight: bold;
+}
+
+/* Bold and green for multiples of 3 */
+tbody tr:nth-child(3n) {
+    font-weight: bold;
+    color: green;
+}
+
+/* Italic with 30px font size for (4n+1) positions */
+tbody tr:nth-child(4n+1) {
+    font-style: italic;
+    font-size: 30px;
+}
+
+/* Last row in the table body gets a yellow background */
+tbody tr:last-child {
+    background-color: yellow;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Hover Effect</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        
+        h1 {
+            color: pink;
+            font-size: 50px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        .cards-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            width: 150px;
+            height: 200px;
+            background-color: yellow;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .card:nth-child(2) {
+            background-color: pink;
+        }
+
+        .card:nth-child(3) {
+            background-color: red;
+        }
+
+        .card:nth-child(4) {
+            background-color: green;
+        }
+
+        /* Hover effect to fade other cards */
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .card:hover ~ .card,
+        .card:hover + .card {
+            opacity: 0.5;
+        }
+
+        /* Target all cards except the hovered one and decrease opacity */
+        .cards-container:hover .card:not(:hover) {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>CARDS</h1>
+    <div class="cards-container">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+</body>
+</html>
